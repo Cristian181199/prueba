@@ -55,6 +55,19 @@ class SiteController extends Controller
     }
 
     /**
+     * Saluda al usuario
+     *
+     * @param string $nombre
+     * @return string
+     */
+    public function actionHola($nombre)
+    {
+        return $this->render('hola', [
+            'nombre' => $nombre,
+        ]);
+    }
+
+    /**
      * Displays homepage.
      *
      * @return string
