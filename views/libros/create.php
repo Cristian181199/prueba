@@ -1,16 +1,17 @@
 <?php
 
+use yii\bootstrap4\ActiveForm;
 use yii\bootstrap4\Html;
-use yii\helpers\Url;
 
 ?>
 
-<?= Html::beginForm(['libros/create']); ?>
+<?php $form = ActiveForm::begin() ?>
 
-    <?= Html::label('Titulo', 'titulo'); ?>
-    <?= Html::textInput('titulo', null, ['id' => 'titulo']); ?>
+    <?= $form->field($librosForm, 'titulo') ?>
+    <?= $form->field($librosForm, 'autor') ?>
 
-    <?= Html::label('Autor', 'autor'); ?>
-    <?= Html::textInput('autor', null, ['id' => 'autor']); ?>
+    <div class="form-group">
+        <?= Html::submitButton('Crear', ['class' => 'btn btn-primary']) ?>
+    </div>
 
-<?= Html::endForm(); ?>
+<?php ActiveForm::end() ?>

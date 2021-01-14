@@ -2,15 +2,17 @@
 
 namespace app\controllers;
 
+use app\models\LibrosForm;
 use yii\web\Controller;
 
-/**
- * Undocumented class
- */
 class LibrosController extends Controller
 {
-    public function actionCreate ()
+    public function actionCreate()
     {
-        return $this->render('create');
+        $librosForm = new LibrosForm();
+
+        return $this->render('create', [
+            'librosForm' => $librosForm,
+        ]);
     }
 }
